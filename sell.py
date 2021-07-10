@@ -45,7 +45,7 @@ sellTokenContract = web3.eth.contract(contract_id, abi=sellAbi)
 balance = sellTokenContract.functions.balanceOf(sender_address).call()
 symbol = sellTokenContract.functions.symbol().call()
 readable = web3.fromWei(balance,'ether')
-print("Balance: " + readable + " " + symbol)
+print("Balance: " + str(readable) + " " + symbol)
 
 #Enter amount of token to sell
 tokenValue = web3.toWei(input("Enter amount of " + symbol + " you want to sell: "), 'ether')
